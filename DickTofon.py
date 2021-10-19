@@ -21,6 +21,8 @@ print("DickTofon by ArturkaKastrulka228")
 FILENAME = input("Введите название файла:")
 FILENAME = FILENAME + ".wav"
 
+#начало записи
+
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
@@ -33,9 +35,10 @@ frames = []
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
     data = stream.read(CHUNK)
     frames.append(data)
-while 
+
 print("* done recording")
 
+#остановка записи
 stream.stop_stream()
 stream.close()
 p.terminate()
